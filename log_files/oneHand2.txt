@@ -1,0 +1,117 @@
+Ignition Hand #4315174197  Zone Poker ID#1774 HOLDEMZonePoker No Limit - 2022-07-18 21:11:52
+
+Seat 1: UTG ($4.34 in chips)
+
+Seat 2: UTG+1 ($29.50 in chips)
+
+Seat 3: UTG+2 [ME] ($34.62 in chips)
+
+Seat 4: Dealer ($43.42 in chips)
+
+Seat 5: Small Blind ($12.50 in chips)
+
+Seat 6: Big Blind ($25 in chips)
+
+Dealer : Set dealer [4] 
+
+Small Blind : Small Blind $0.10 
+
+Big Blind : Big blind $0.25 
+
+*** HOLE CARDS ***
+
+UTG : Card dealt to a spot [Ad 4d] 
+
+UTG+1 : Card dealt to a spot [3s Qs] 
+
+UTG+2  [ME] : Card dealt to a spot [9h Jh] 
+
+Dealer : Card dealt to a spot [Ac 5s] 
+
+Small Blind : Card dealt to a spot [4s 8h] 
+
+Big Blind : Card dealt to a spot [7h 9s] 
+
+UTG+1 : Leave(Auto)
+
+Small Blind : Leave(Auto)
+
+UTG : Calls $0.25 
+
+UTG+1 : Folds
+
+UTG+2  [ME] : Raises $1 to $1
+
+Big Blind : Leave(Auto)
+
+Dealer : Folds
+
+Dealer : Leave(Auto)
+
+Small Blind : Folds
+
+Big Blind : Folds
+
+UTG : Calls $0.75 
+
+*** FLOP *** [5h 6h Ah]
+
+UTG : Checks
+
+UTG+2  [ME] : Bets $0.56 
+
+UTG : All-in(raise) $3.34 to $3.34
+
+UTG+2  [ME] : Calls $2.78 
+
+*** TURN *** [5h 6h Ah] [8c]
+
+*** RIVER *** [5h 6h Ah 8c] [4c]
+
+UTG : Showdown [Ah Ad 4d 4c 8c] (Two pair)
+
+UTG+2  [ME] : Showdown [Ah Jh 9h 6h 5h] (Flush)
+
+UTG+2  [ME] : Hand result $8.58 
+
+UTG : Seat sit out
+
+UTG : Leave(Auto)
+
+UTG+2  [ME] : Leave(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+*** SUMMARY ***
+
+Total Pot($9.03)
+
+Board [5h 6h Ah 8c 4c]
+
+Seat+1: UTG lost with Two pair [Ad 4d-Ah Ad 4d 4c 8c]  
+
+Seat+2: UTG+1 lost with High Card [3s Qs]  
+
+Seat+3: UTG+2 $8.58  with Flush [9h Jh-Ah Jh 9h 6h 5h]  
+
+Seat+4: Dealer Folded before the RIVER
+
+Seat+5: Small Blind lost with Two pair [4s 8h]  
+
+Seat+6: Big Blind lost with Straight [7h 9s]  
+
+
+
+
+
+Ignition Hand #4315174541  Zone Poker ID#1774 HOLDEMZonePoker No Limit - 2022-07-18 21:12:32

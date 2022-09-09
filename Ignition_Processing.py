@@ -1,5 +1,8 @@
+from ast import Num
 from io import TextIOWrapper
 import re
+import Decision_Types
+import Regex_Searches as Searches
 
 
 positions = {'UTG': 0,
@@ -43,17 +46,14 @@ class Hand:
         # move file cursor past hand padding
         self.init_stacks()
         self.init_hole_cards()
-        #preflop.process()
-        print("STACKS:\n")
-        print(self.stacks)
-        print("HOLE CARDS:")
-        print(self.hole_cards)
+        preflop = Preflop(self, 0)
+        preflop.process()
 
 
     def init_stacks(self):
         line = self.file.readline().strip()
         while not line.startswith('***'):
-            result = re.search(r"Seat \d:([^(]*)\(\$([0-9.]*).*", line)
+            result = re.search(Searches.StackSize, line)
             if result:
                 positionList = result.group(1).strip().split() # i.e ['Small', 'Blind', '[ME]']
                 position = positionList[0]
@@ -72,7 +72,7 @@ class Hand:
         line = self.file.readline().strip()
         toBeDealt = set(positions.keys())
         while len(toBeDealt):
-            result = re.search(r"([^\s]*).*dealt.*\[(.*)\].*", line)
+            result = re.search(Searches.HoleCards, line)
             if result:
                 position = result.group(1)
                 cards = result.group(2).split()
@@ -83,10 +83,11 @@ class Hand:
 
 class Street:
     # name: preflop, flop, turn, river
-    def __init__(self, name: str, hand: Hand):
+    def __init__(self, name: str, hand: Hand, pot_size):
         self.name = name
         self.hand = hand
         self.comm_cards = None
+        self.prior_pot_size = pot_size
         self.actions = [[] for _ in range(self.hand.num_players)]
 
 
@@ -99,8 +100,8 @@ class Street:
 
 
 class Preflop(Street):
-    def __init__(self, hand):
-        super().__init__('Preflop', hand)
+    def __init__(self, hand, pot_size):
+        super().__init__('Preflop', hand, pot_size)
 
 
     def init_cards(self):
@@ -112,31 +113,43 @@ class Preflop(Street):
         bet_number = 1
         line = self.hand.file.readline().strip()
         while not line.startswith('***'):
-            action = Action(bet_number)
-            action.process(line)
-            if action.decision == 'Raise':
-                bet_number += 1
+            valid_action = re.search(Searches.ValidAction, line)
+            if valid_action:
+                position = valid_action.group(1).split()[0]
+                decision = valid_action.group(2)
+                action = Action(bet_number, decision)
+                action.process(line)
+                if action.decision == 'Raises':
+                    bet_number += 1
+                self.actions[positions[position]].append(action)
+            line = self.hand.file.readline().strip()
 
 
 class Action:
-    def __init__(self, bet_number):
+    def __init__(self, bet_number, decision):
         self.bet_number = bet_number
-        self.decision = None
-        self.size = None # only applicable for 'raise'
+        self.decision = decision
+        self.raise_size = None # only applicable for 'Raises' and 'Bets'
+        self.all_in = False # only applicable for 'Raises' and 'Bets'
+
 
     def process(self, line: str):
-        if line.find('Folds') != -1:
-            self.decision = 'Fold'
-        elif line.find('Calls') != -1:
-            self.decision = 'Call'
-            self.size = float(line[line.index('$'):].split()[0][1:])
-        elif line.find('Checks') != -1:
-            self.decision = 'Check'
-        else:
-            self.decision = 'Raise'
-            self.size = float(line[line.index('$'):].split()[0][1:])
+        if self.decision == Decision_Types.Bets:
+            self.raise_size = Action._process_helper(line, Searches.BetSize)
+        elif self.decision == Decision_Types.Raises:
+            self.raise_size = Action._process_helper(line, Searches.RaiseSize)
+        elif self.decision == Decision_Types.AllIn:
+            self.raise_size = Action._process_helper(line, Searches.BetSize)
+            self.all_in = True
+        elif self.decision == Decision_Types.AllInRaise:
+            self.raise_size = Action._process_helper(line, Searches.RaiseSize)
+        # No need to do anything more for bet, check, or fold
 
 
+    def _process_helper(line: str, regexText):
+        return float(re.search(regexText, line).group(2))
+
+            
 class Card:
     def __init__(self, rank, suit):
         self.rank = rank
@@ -159,9 +172,6 @@ class Card:
         return f'{self.rank}{self.suit}'
 
 
-
-
-
 db = Database()
-f = open('log_files/oneHand.txt', 'r')
+f = open('log_files/oneHand1.txt', 'r')
 db.process_file(f)

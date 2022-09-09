@@ -1,0 +1,5 @@
+StackSize = r"Seat \d:([^(]*)\(\$([0-9.]*).*"
+HoleCards = r"([^\s]*).*dealt.*\[(.*)\].*"
+ValidAction = r"([^\s]*).*: (Folds|Checks|Calls|Bets|Raises|All-in\(raise\)|All-in)"
+RaiseSize = r".*\$(.*) to \$([^ ]*)$"
+BetSize = r".*(All-in|Bets) \$([^ ]*)"
