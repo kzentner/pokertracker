@@ -1,0 +1,113 @@
+Ignition Hand #4315170832  Zone Poker ID#1774 HOLDEMZonePoker No Limit - 2022-07-18 21:05:35
+
+Seat 1: UTG+2 ($23.38 in chips)
+
+Seat 2: Dealer ($24.59 in chips)
+
+Seat 3: Small Blind ($6.69 in chips)
+
+Seat 4: Big Blind ($36.03 in chips)
+
+Seat 5: UTG ($70.40 in chips)
+
+Seat 6: UTG+1 [ME] ($24.67 in chips)
+
+Dealer : Set dealer [2] 
+
+Small Blind : Small Blind $0.10 
+
+Big Blind : Big blind $0.25 
+
+*** HOLE CARDS ***
+
+UTG+2 : Card dealt to a spot [Qh 2s] 
+
+Dealer : Card dealt to a spot [6s Qd] 
+
+Small Blind : Card dealt to a spot [Jc 5s] 
+
+Big Blind : Card dealt to a spot [9d 9c] 
+
+UTG : Card dealt to a spot [8d 7s] 
+
+UTG+1  [ME] : Card dealt to a spot [9h Ac] 
+
+UTG+2 : Leave(Auto)
+
+Dealer : Leave(Auto)
+
+UTG : Folds
+
+UTG : Leave(Auto)
+
+Small Blind : Leave(Auto)
+
+UTG+1  [ME] : Raises $0.62 to $0.62
+
+UTG+2 : Folds
+
+Dealer : Folds
+
+Small Blind : Folds
+
+Big Blind : Calls $0.37 
+
+*** FLOP *** [8c As 9s]
+
+Big Blind : Checks
+
+UTG+1  [ME] : Bets $0.43 
+
+Big Blind : Calls $0.43 
+
+*** TURN *** [8c As 9s] [Ad]
+
+Big Blind : Checks
+
+UTG+1  [ME] : Bets $1.40 
+
+Big Blind : Raises $3.85 to $3.85
+
+UTG+1  [ME] : Raises $7.75 to $9.15
+
+Big Blind : Raises $25.69 to $29.54
+
+UTG+1  [ME] : All-in $14.47 
+
+Big Blind : Return uncalled portion of bet $5.92 
+
+*** RIVER *** [8c As 9s Ad] [4s]
+
+Big Blind : Showdown [9s 9d 9c As Ad] (Full House)
+
+UTG+1  [ME] : Showdown [As Ad Ac 9s 9h] (Full House)
+
+UTG+1  [ME] : Hand result $47.44 
+
+Big Blind : Leave(Auto)
+
+UTG+1  [ME] : Leave(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Enter(Auto)
+
+Seat sit out
+
+Leave(Auto)
+
+Enter(Auto)
+
+*** SUMMARY ***
+
+
+
+
