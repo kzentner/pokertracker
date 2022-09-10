@@ -129,20 +129,21 @@ class Action:
     def __init__(self, bet_number, decision):
         self.bet_number = bet_number
         self.decision = decision
-        self.raise_size = None # only applicable for 'Raises' and 'Bets'
+        self.size = None
         self.all_in = False # only applicable for 'Raises' and 'Bets'
 
 
     def process(self, line: str):
         if self.decision == Decision_Types.Bets:
-            self.raise_size = Action._process_helper(line, Searches.BetSize)
+            self.size = Action._process_helper(line, Searches.BetSize)
         elif self.decision == Decision_Types.Raises:
-            self.raise_size = Action._process_helper(line, Searches.RaiseSize)
+            self.size = Action._process_helper(line, Searches.RaiseSize)
         elif self.decision == Decision_Types.AllIn:
-            self.raise_size = Action._process_helper(line, Searches.BetSize)
+            self.size = Action._process_helper(line, Searches.BetSize)
             self.all_in = True
         elif self.decision == Decision_Types.AllInRaise:
-            self.raise_size = Action._process_helper(line, Searches.RaiseSize)
+            self.size = Action._process_helper(line, Searches.RaiseSize)
+            self.all_in = True
         # No need to do anything more for bet, check, or fold
 
 
