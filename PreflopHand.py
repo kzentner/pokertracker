@@ -1,5 +1,4 @@
 from Ignition_Processing import *
-from IPython.display import display
 import ipywidgets as widgets
 import Decision_Types as Decision
 
